@@ -1,2 +1,2 @@
-# csherpa-github-io
+# csherpa.github.io
 My first website
