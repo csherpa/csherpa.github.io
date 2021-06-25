@@ -53,13 +53,12 @@ function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
     return function(string) {
-       if(string[0].toUpperCase() === startsWith.toUpperCase()){
+        console.log(string);
+       if(string.toLowerCase().startsWith(startsWith.toLowerCase())){
          return true;
        } 
        return false;
     }
-    
-    
     
     // YOUR CODE ABOVE HERE //
 }
@@ -73,7 +72,7 @@ function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
     return function(string) {
-      if(string[string.length - 1].toLowerCase() === endsWith.toLowerCase()){
+      if(string[string.length - 1].toLowerCase().endsWith(endsWith.toLowerCase())){
         return true;
       }
       return false;
@@ -113,12 +112,15 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
    
-   for(let i = 0; i <strings.length; i++){
-       if(test(strings[i])){
-            return true;
-       }
-       return false;
+   //loop over strings array
+   for(let i = 0; i < strings.length; i++){
+       // check if the test passed on string give back false
+       if(test(strings[i]) === false){
+        return false
+      }
+      
    }
+   return true;
     // YOUR CODE ABOVE HERE //
 }
 

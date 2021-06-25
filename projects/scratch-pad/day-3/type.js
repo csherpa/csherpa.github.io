@@ -34,10 +34,12 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-//   if(typeof value === "object" && !Array.isArray(value) && value !== null){
-//       return true;
-//   }
-//   return false;
+    if(Array.isArray(value) || value === null || value instanceof Date || typeof value === 'string' || typeof value === 'number'  || typeof value === 'boolean'){
+        return false;
+    }
+    else if (typeof value === 'object'){
+        return true;
+    }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -49,11 +51,13 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-   if(typeof value === "object" && !Array.isArray(value) && value !== null){
-       return true;
-   }
-   return false;
-    
+    if(value === null || value instanceof Date || typeof value === 'string' || typeof value === 'number'  || typeof value === 'boolean'){
+        return false;
+    }
+    else if (typeof value === 'object' || Array.isArray(value)){
+        return true;
+    }
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -78,8 +82,33 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-   
-    
+    if(Array.isArray(value)){
+        return 'array';
+    }
+    else if(typeof value === 'string'){
+        return 'string';
+    }
+    else if(typeof value === 'number'){
+        return 'number';
+    }
+    else if(value instanceof Date){
+        return 'date';
+    }
+    else if(typeof value === 'boolean'){
+        return 'boolean';
+    }
+    else if(value === null){
+        return 'null';
+    }
+    else if(value === isNaN){
+        return 'number';
+    }
+    else if(typeof value === 'function'){
+        return 'function';
+    }
+    else{
+        return 'null';
+    }
     // YOUR CODE ABOVE HERE //
 }
 
