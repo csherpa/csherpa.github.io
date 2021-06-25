@@ -67,8 +67,13 @@ function makeContactList() {
             }
         },
         removeContact: function(contact) {
+            //loop through the contacts array
             for(let i = 0; i < contacts.length; i++){
+                //check if contact in array is the same as parameter contact
+                
+                // if it exixts delete the contact
                 if(contacts[i] === contact){
+                    //use splice method to remove the value
                     return contacts.splice(i, 1);
                 }
             }
