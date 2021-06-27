@@ -10,6 +10,21 @@
  * variable.
  *
  * 2. There are 2 phases of using variables: declaration and initialization (or assignment).
+ *
+ * 3. 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  */
 
 // 1. declaration //

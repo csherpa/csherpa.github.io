@@ -26,8 +26,12 @@
  * Unary operators only work with one value
  *
  * 6. Ternary operator
- * Conditional operator that assigns a value to a variable based on some condition
- * SYNTAX : varName = (condition) ? value1:value2
+ * Conditional operator that assigns a value to a variable based on some condition.
+ * Ternary operators is a shorthand way of writing the if...else statements.
+ * The ternary operator is represented by the question mark (?) symbol and it takes 
+ * three operands: a condition to check, a result for true, and a result for false.
+ *
+ * SYNTAX : varName = (condition) ? value1 : value2
  *
  */
  
@@ -104,5 +108,7 @@
  // 6. Ternary operators
  //SYNTAX : varName = (condition) ? value1:value2
  let age = 18;
+ 
+ // if the condtion is evaluated to true the 'No Drink' will be returned, otherwise 'Drink Up!!' will return 
  let canDrink = age < 21 ? 'No Drink' : 'Drink Up!!';
  console.log(canDrink); // prints => No Drink
