@@ -1,6 +1,7 @@
 /*
  * FUNCTIONS:
- * 0. Function is a group of statements that perform specific tasks and can be kept and maintained separately form main program.
+ * 0. Functions in JavaScript are 'first-class' objects. Function is a group of statements that perform specific 
+ * tasks and can be kept and maintained separately form main program.
  * Reusable blocks of code that accepts inputs, process those inputs, and returns a new data value.
  * 
  * SYNTAX : function functionName(parameter) {
@@ -57,4 +58,18 @@
  *     return parameter1 + parameter2;
  *   }
  *
- */
+ * 6. SCOPE
+ * Scope defines where variables can be accessed or referenced. There are two types of scope:
+ * - Global Scope : In global scope, variables are declared outside of blocks. Since global
+ *                  variables are not bound inside a block, they can be accessed by any
+ *                  code in the program including code in blocks.
+ *
+ * - Local Scope : Functions in JavaScript have local scope. Local scope refers to
+ *                 declaration that happen within the function body, so it's not accessaible
+ *                 in the parent scope
+ *
+ * Block Scope : A type of local scope that is defined inside a curly braces {}. Variables 
+ *               defined with let and const are block-scoped.
+ * 
+ * Nested Scope : Nested scope can be formed when a function is defined within another funtion. 
+ */ 
