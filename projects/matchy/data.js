@@ -14,36 +14,57 @@
 
 // declare an object animal
 var  animal = {};
+
+//use bracket and dot notation to add key:value pairs in animal object
 animal['species'] = 'Cat';
 animal['name'] = 'Sushi';
 animal.noises = [];
 
-console.log(animal);
+console.log(animal); //prints => {species: 'Cat', name: 'Sushi', noises: []}
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+//declare an array noises
 var noises = [];
 
+//bracket notation to add a string in the array
 noises[0] = 'Meow';
+
+//use push method to add value at the end of the array
 noises.push('Purr');
+
+//use unshift method to add in the front of the array
 noises.unshift('Hiss');
+
 noises.push('Snore');
+
+// use length property to add a value at the end on an array
 noises[noises.length] = 'Rarr';
 
-console.log(noises.length);
+console.log(noises.length); //Prints => 5
 
-console.log(noises[noises.length - 1]);
+console.log(noises[noises.length - 1]); //Prints Rarr
 
-console.log(noises);
+console.log(noises); //Prints => ['Meow', 'Purr', 'Hiss', 'Snore', 'Rarr']
+
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-animal.noises = noises;
+//Use bracket notation to add noises array to the animal object
+animal['noises'] = noises;
 
 console.log(animal);
+/*
+ Prints => 
+ {
+  species: 'Cat',
+  name: 'Sushi',
+  noises: [ 'Hiss', 'Meow', 'Purr', 'Snore', 'Rarr' ]
+}
+*/
 
 /* *******************************************************************
  * Step 4 - Review
@@ -69,22 +90,35 @@ console.log(animal);
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// declare a variable animals and assign it with []
 var animals = [];
 
+//push method adds the animal object in the array
 animals.push(animal);
 
 console.log(animal);
+/*Prints => [
+   {
+      species: 'Cat',
+      name: 'Sushi',
+      noises: [ 'Hiss', 'Meow', 'Purr', 'Snore', 'Rarr' ]
+   }
+  ]
+*/
 
+//declare a variable duck and give key:value pairs 
 var duck = { 
     species: 'duck', 
     name: 'Jerome', 
     noises: ['quack', 'honk', 'sneeze', 'woosh'] 
 }
 
+//this adds duck object at the end of an animals array
 animals.push(duck);
 
 console.log(animals);
 
+//declare variable dog
 var dog = {
     species: 'canine',
     name: 'Jack',
@@ -116,11 +150,14 @@ console.log(animals.length);
  */
 
 ///Array data structure to add friends list
-
+//use dot notation to add key:value in bird object
 bird.friends = ['Jimmy'];
 
 var friends = [];
 
+//declare getRandom function
+//I: Array
+//O; Random Index
 function getRandom(array) {
     for(let i = 0; i < array.length; i++){
         return Math.floor(Math.random(i));
