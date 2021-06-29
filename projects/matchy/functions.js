@@ -58,7 +58,7 @@ function remove(arr, str) {
   for(let i = 0; i < arr.length; i++){
     //check if the name exists in the array
     if(arr[i].name === str) {
-      //if it exists use splice to remove the object from the array
+      //if it exists use splice toremove the object from the array
       let result = arr.splice(str, 1);
       return result;
     }
