@@ -80,3 +80,115 @@
  *           to an outer function's scope from an inner function. In JavaScript closures are 
  *           created every time a function is created, at function creation time.
  */ 
+ 
+ // 1) Function Declaration/Definition
+ function sayMyName() {
+     console.log('Hi Chhoti!'); 
+ }
+ 
+ // 2) Function Call/Invoation 
+ sayMyName(); // prints 'Hi Chhoti!'
+ 
+ // 3) Passing Parameter and Arguments 
+ function rectangleArea( width, length) {
+     //return keyword gives us a value back as a result
+     console.log(width * length);
+ }
+ 
+ //Calling rectangleArea and passing arguments
+ rectangleArea(2, 4); //prints => 8
+ 
+ // 4) Function Expression 
+ // The function below is being assigned to a variable getAdd and can be used as a function.
+ let getAdd = function(num1, num2) {
+     return num1 + num2;
+ }
+ 
+ // Function call using the variable getAdd
+ getAdd(2, 2); //return => 4
+ 
+ // 5) Inputs/Outputs
+ // I: 2 Strings (firstName, lastName)
+ // O: 1 String (firstName and lastName concatenated together)
+ function fullName(firstName, lastName) {
+     // return keyword gives us the output
+     return `${firstName} ${lastName}`;
+ }
+ 
+ fullName('Chhoti', 'Sherpa'); // returns => 'Chhoti Sherpa'
+ 
+ 
+ // 6) Scope 
+ 
+ // GLOBAL SCOPE
+ let name = 'Jack';
+ 
+ function giveName() {
+     name = 'Sparrow';
+ }
+ 
+ console.log(name) //prints => 'Jack'
+ 
+ giveName() // calling the function
+ 
+ console.log(name); // prints => 'Sparrow'
+ 
+ // LOCAL SCOPE
+ let anotherName = 'Bob';
+ 
+ function giveName() {
+     let last = 'Sparrow'
+     return `${anotherName} ${last}`;
+ }
+ 
+ console.log(anotherName); //Prints 'Bob'
+ 
+ console.log(giveName()); //Returns string 'Bob Sparrow'
+ 
+ //the variable last cannot be accessed in global scope.
+ console.log(last);// prints => ReferenceError: last is not defined
+
+// BLOCK SCOPE
+//Variables defined with let and const are block-scoped
+
+if(true) {
+ var notBlock = 2;
+ let blocked = notBlock;
+}
+
+console.log(notBlock); // prints => 2;
+
+console.log(blocked);// prnts => ReferenceError: blocked is not defined
+
+// NESTED SCOPE
+function add() {
+ let counter = 1;
+ 
+ //a nested function inside add()
+ function plus(){
+  //child scopes can have access to parent scopes
+  counter += 1; //adds 1 (counter = counter + 1);
+ }
+ //function call
+ plus();
+ console.log(counter); // prints => 2
+}
+
+//function call
+add();
+
+
+// Closures
+function greeting(message) {
+ //Anonymous Function called within greeting();
+ //This function takes a name and returns a concatenated string.
+ return function(name) {
+  return `${message} ${name}`;
+ }
+}
+
+// the variable sayHello has the value of greeting();
+let sayHello = greeting('Hello')
+
+//sayHello() call returns concatenated string.
+sayHello('Chhoti');// return => 'Hello Chhoti' 
