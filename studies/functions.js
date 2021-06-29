@@ -72,4 +72,11 @@
  *               defined with let and const are block-scoped.
  * 
  * Nested Scope : Nested scope can be formed when a function is defined within another funtion. 
+ *                In nested scope a variable declared in a function can be accessed by another
+ *                function within that function body.
+ * 
+ * Closure : A closure is the combination of a function bundled together (enclosed) with references
+ *           to its surrounding state (the lexical environment). Which means, a closure gives us access 
+ *           to an outer function's scope from an inner function. In JavaScript closures are 
+ *           created every time a function is created, at function creation time.
  */ 
