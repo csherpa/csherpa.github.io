@@ -96,7 +96,7 @@ animals.push(dog);
 var bird = {
     species: 'bird',
     name: 'FlyNugget',
-    noises: ['chirp', 'squak'],
+    noises: ['chirp', 'squak']
 }
 
 animals.push(bird);
