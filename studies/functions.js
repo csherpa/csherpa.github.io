@@ -134,20 +134,16 @@
  console.log(name); // prints => 'Sparrow'
  
  // LOCAL SCOPE
- let anotherName = 'Bob';
  
+ // variable last can only be accessed within the giveName();
  function giveName() {
      let last = 'Sparrow'
-     return `${anotherName} ${last}`;
+     console.log(last); //prints => Sparrow
+     return last;
  }
  
- console.log(anotherName); //Prints 'Bob'
+ console.log(giveName()); //Returns string 'Sparrow'
  
- console.log(giveName()); //Returns string 'Bob Sparrow'
- 
- //the variable last cannot be accessed in global scope.
- console.log(last);// prints => ReferenceError: last is not defined
-
 // BLOCK SCOPE
 //Variables defined with let and const are block-scoped
 
@@ -158,7 +154,7 @@ if(true) {
 
 console.log(notBlock); // prints => 2;
 
-console.log(blocked);// prnts => ReferenceError: blocked is not defined
+// console.log(blocked);// prnts => ReferenceError: blocked is not defined
 
 // NESTED SCOPE
 function add() {
