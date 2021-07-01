@@ -171,6 +171,13 @@ function isFriend(name, object) {
 //I: string , array
 //O: Array
 function nonFriends(name, array) {
+    let notMyFriends = [];
+    for(let i = 0; i < array.length; i++){
+        if(array[i].name !== name && array[i].friends.indexOf(name) === -1){
+            notMyFriends.push(array[i].name);
+        }  
+    }
+    return notMyFriends;
 
 }
 
