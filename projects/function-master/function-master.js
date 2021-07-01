@@ -34,6 +34,7 @@ function keysToString(object) {
 
 //I: Object
 //O: String
+//E: check if all the values are a String
 function valuesToString(object) {
     let arr = [];
     for(let key in object) {
@@ -118,6 +119,7 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 //I: Object
 //O: String
+//E: Check for empty [] and {}
 function maybeNoises(object) {
     if( object.noises === undefined  || object.noises.length === 0 ) {
         return 'there are no noises';
@@ -158,6 +160,7 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 //I: String, Object
 //O: Boolean
+//E: Check if the friends key exists
 function isFriend(name, object) {
     if(object.friends === undefined || object.friends.indexOf(name) === - 1) {
         return false;
@@ -170,6 +173,7 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 //I: string , array
 //O: Array
+//E: Check if the name === object[name] and object.friends === name
 function nonFriends(name, array) {
     let notMyFriends = [];
     for(let i = 0; i < array.length; i++){
