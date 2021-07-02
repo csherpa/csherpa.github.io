@@ -72,18 +72,17 @@ function remove(arr, str) {
 //declare function add with 2 parameters(array, object)
 //I: Array, Object
 //O: Object
+//Need to Change this code
 function add (arr, obj) {
   for(let i = 0; i < arr.length; i++){
     //check if the name exist and name and species has a length > 0
-    if(arr[i].name !== obj.name && obj.name.length > 0 && obj.species.length > 0){
-      //use splice method to replace the elements if name doesn't exists.
-      arr.splice( arr.length, 0, obj);
-      return arr;
-    }
-    else{
-      return arr[i];
+    if(arr[i].name === obj.name && obj.name.length > 0 && obj.species.length > 0){
+      // break the loop if the name exists
+      return ;
     }
   }
+  //use splice method to add the values if name doesn't exists.
+  return arr.splice( arr.length, 0, obj);
 }
 /**
  * You did it! You're all done with Matchy!
