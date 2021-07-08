@@ -316,7 +316,6 @@ _.reject = function(array, func) {
 */
 
 _.partition = function(array, func) {
-    ////try to work it with reduce
     let trueVal = [];
     let falseVal = [];
     for(let i = 0; i< array.length; i++) {
@@ -400,17 +399,18 @@ _.pluck = function(obj, property) {
 */
 
 _.every = function(collection, func) {
-    //use _.each to loop through the collection depending on it being array or object
+    if(func === undefined){
+       for(let i = 0; i < collection.length; i++){
+           if(!collection[i]){
+               return false;
+           }
+        }
+        return true;
+    }
     if(Array.isArray(collection)){
         for(let i = 0; i < collection.length; i++){
-            //call func in each values, index and collection 
-            // console.log(func(collection[i], i , collection));
-            // console.log(collection[i]);
-            // if(collection[i]){
-            //     return true;
-            // }
-            if(func === undefined  || !func(collection[i], i , collection )) {
-               return false;
+            if(!func(collection[i], i , collection )) {
+              return false;
             }
             
         }
@@ -418,14 +418,9 @@ _.every = function(collection, func) {
     }
     else{
         for(let key in collection){
-            // console.log(func(collection[key], key, collection));
-            // if(collection[key]){
-            //     return true;
-            if( func === undefined || !func(collection[key], key, collection) ) {
+            if(!func(collection[key], key, collection) ) {
                 return false;
             }
-            
-
         }
         return true;
     }
@@ -453,29 +448,29 @@ _.every = function(collection, func) {
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 _.some = function(collection, func) {
+    if(func === undefined){
+       for(let i = 0; i < collection.length; i++){
+           if(!collection[i]){
+               return false;
+           }
+        }
+        return true;
+    }
     if(Array.isArray(collection)){
         for(let i = 0; i < collection.length; i++){
             //call func in each values, index and collection 
-            // console.log(func(collection[i], i , collection));
-            // console.log(collection[i]);
-            if(func === undefined || func(collection[i], i , collection)){
+            if(func(collection[i], i , collection)){
                 return true;
             }
-            // else if (func(collection[i], i , collection) === false){
-            //     return false;
-            // }
         }
         return false;
     }
     else{
         for(let key in collection){
             // console.log(func(collection[key], key, collection));
-            if(func === undefined || func(collection[key], key , collection)){
+            if(func(collection[key], key , collection)){
                 return true;
             }
-            // else if (func(collection[key], key , collection) === false){
-            //     return false;
-            // }
         }
         return false;
     }
