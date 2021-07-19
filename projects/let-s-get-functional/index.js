@@ -54,10 +54,10 @@ var femaleCount = function(array) {
 //I: Array
 //O: String
 var oldestCustomer = function(array) {
-    let oldest = 0;
+    // let oldest = 0;
     return _.reduce(array, (memo, val, i) => {
-      if(val.age > oldest){
-         oldest = val.age;
+      if(val.age > memo.age){
+         memo = val.age;
          return val.name;
       }
       return memo;
@@ -95,21 +95,21 @@ var averageBalance = function(array) {
 //I: Array, String(letter)
 //O: Number
 var firstLetterCount = function(array, string) {
-    let letterCount = 0;
-    return _.reduce (array, (memo, val) =>{
+    // let letterCount = 0;
+    return _.reduce (array, (letterCount, val) =>{
       if(val.name[0].toUpperCase() === string.toUpperCase()){
         letterCount += 1;
-        return letterCount;
+        // return letterCount;
       }
-      return memo;
+      return letterCount;
     }, 0);
 };
 
 //I: Array, Object(Customer), String(letter)
 //O: Number
 var friendFirstLetterCount = function(array, obj, str) {
-    let count = 0; 
-    return _.reduce(array, (memo, val, i) => {
+    // let count = 0; 
+    return _.reduce(array, (count, val, i) => {
       if(val.name === obj){
         for(let i = 0; i< val.friends.length; i++) {
           if(val.friends[i].name[0].toUpperCase() === str.toUpperCase()){
