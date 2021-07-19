@@ -63,4 +63,4 @@
  */
  
  let greet = 'Hello';
- console.log(greet.repeat(3));
+ console.log(greet.repeat(3));// prints 'HelloHelloHello' ;
