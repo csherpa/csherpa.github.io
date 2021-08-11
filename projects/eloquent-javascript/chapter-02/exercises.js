@@ -37,9 +37,34 @@ function fizzBuzz(num1, num2) {
 ////////////////////////////////////////////////////////////////////////////////
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
-function drawChessboard() {
-
+//I: Numbers {height, width}
+//O: 
+function drawChessboard(num) {
+    let chess = '';
+  for(let i = 0; i < num; i++){
+    for(let j = 0; j < num; j++){
+      //check if i is an even number
+      if(i % 2 === 0){
+        if(j % 2 === 0){
+          chess += ' ';
+        }
+        else{
+          chess += "#";
+        }
+      }
+      else{
+        ///check if j num is even 
+        if(j % 2 === 0){
+          chess += '#';
+        }
+        else{
+          chess += ' ';
+        }
+      }
+    }
+    chess += "\n";
+  }
+  console.log(chess)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
